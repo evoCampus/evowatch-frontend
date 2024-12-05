@@ -1,5 +1,5 @@
-import { AddUserDTO, ModifyUserDTO, UserApi } from "../api";
-import axios, { AxiosInstance } from "axios";
+import { AddUserDTO, UserApi, UserDTO } from "../api";
+import { AxiosInstance } from "axios";
 
 export class UserService {
     private readonly userApi : UserApi;
@@ -8,7 +8,7 @@ export class UserService {
         this.userApi = new UserApi(undefined, undefined, axiosInstance);
     }
 
-    addUser = async (user : AddUserDTO) : Promise<void> => {
+    addUser = async (user : AddUserDTO) : Promise<UserDTO> => {
         const { data } = await this.userApi.addUser(user);
         return data;
     }

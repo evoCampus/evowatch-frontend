@@ -136,6 +136,49 @@ export interface ProblemDetails {
      */
     'instance'?: string | null;
 }
+/**
+ * 
+ * @export
+ * @interface UserDTO
+ */
+export interface UserDTO {
+    /**
+     * 
+     * @type {string}
+     * @memberof UserDTO
+     */
+    'id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserDTO
+     */
+    'normalName'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserDTO
+     */
+    'email'?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof UserDTO
+     */
+    'isActive'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserDTO
+     */
+    'nickname'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserDTO
+     */
+    'imageUrl'?: string | null;
+}
 
 /**
  * UserApi - axios parameter creator
@@ -372,7 +415,7 @@ export const UserApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async addUser(addUserDTO?: AddUserDTO, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async addUser(addUserDTO?: AddUserDTO, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserDTO>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.addUser(addUserDTO, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['UserApi.addUser']?.[localVarOperationServerIndex]?.url;
@@ -385,7 +428,7 @@ export const UserApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getUserByEmail(email: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async getUserByEmail(email: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserDTO>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getUserByEmail(email, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['UserApi.getUserByEmail']?.[localVarOperationServerIndex]?.url;
@@ -398,7 +441,7 @@ export const UserApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getUserById(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async getUserById(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserDTO>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getUserById(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['UserApi.getUserById']?.[localVarOperationServerIndex]?.url;
@@ -410,7 +453,7 @@ export const UserApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getUsers(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async getUsers(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<UserDTO>>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getUsers(options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['UserApi.getUsers']?.[localVarOperationServerIndex]?.url;
@@ -425,7 +468,7 @@ export const UserApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async modifyUser(id: string, password?: string, modifyUserDTO?: ModifyUserDTO, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async modifyUser(id: string, password?: string, modifyUserDTO?: ModifyUserDTO, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserDTO>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.modifyUser(id, password, modifyUserDTO, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['UserApi.modifyUser']?.[localVarOperationServerIndex]?.url;
@@ -462,7 +505,7 @@ export const UserApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        addUser(addUserDTO?: AddUserDTO, options?: RawAxiosRequestConfig): AxiosPromise<void> {
+        addUser(addUserDTO?: AddUserDTO, options?: RawAxiosRequestConfig): AxiosPromise<UserDTO> {
             return localVarFp.addUser(addUserDTO, options).then((request) => request(axios, basePath));
         },
         /**
@@ -472,7 +515,7 @@ export const UserApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getUserByEmail(email: string, options?: RawAxiosRequestConfig): AxiosPromise<void> {
+        getUserByEmail(email: string, options?: RawAxiosRequestConfig): AxiosPromise<UserDTO> {
             return localVarFp.getUserByEmail(email, options).then((request) => request(axios, basePath));
         },
         /**
@@ -482,7 +525,7 @@ export const UserApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getUserById(id: string, options?: RawAxiosRequestConfig): AxiosPromise<void> {
+        getUserById(id: string, options?: RawAxiosRequestConfig): AxiosPromise<UserDTO> {
             return localVarFp.getUserById(id, options).then((request) => request(axios, basePath));
         },
         /**
@@ -491,7 +534,7 @@ export const UserApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getUsers(options?: RawAxiosRequestConfig): AxiosPromise<void> {
+        getUsers(options?: RawAxiosRequestConfig): AxiosPromise<Array<UserDTO>> {
             return localVarFp.getUsers(options).then((request) => request(axios, basePath));
         },
         /**
@@ -503,7 +546,7 @@ export const UserApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        modifyUser(id: string, password?: string, modifyUserDTO?: ModifyUserDTO, options?: RawAxiosRequestConfig): AxiosPromise<void> {
+        modifyUser(id: string, password?: string, modifyUserDTO?: ModifyUserDTO, options?: RawAxiosRequestConfig): AxiosPromise<UserDTO> {
             return localVarFp.modifyUser(id, password, modifyUserDTO, options).then((request) => request(axios, basePath));
         },
         /**

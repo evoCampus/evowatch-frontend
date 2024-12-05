@@ -7,11 +7,8 @@ export class ApiClient {
 
     constructor() {
         this.axiosInstance = axios.create({
-            baseURL: "http://localhost:5092/",
-            withCredentials: true,
-            headers: {
-                "Access-Control-Allow-Origin": "*"
-            }
+            baseURL: "/api",
+            withCredentials: true
         });
 
         this.userService = new UserService(this.axiosInstance);
