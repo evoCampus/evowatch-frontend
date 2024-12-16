@@ -8,7 +8,7 @@ export class UserService {
         this.userApi = new UserApi(undefined, undefined, axiosInstance);
     }
 
-    addUser = async (user : AddUserDTO) : Promise<UserDTO> => {
+    async addUser(user:AddUserDTO) : Promise<UserDTO> {
         const { data } = await this.userApi.addUser(user);
         return data;
     }
