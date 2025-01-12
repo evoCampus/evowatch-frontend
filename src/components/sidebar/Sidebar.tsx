@@ -16,10 +16,6 @@ const Sidebar = () => {
     <>
       <div className="bg-[#070707] text-white">
         <div className="border-r border-[#1f1f1f] w-[13%] h-screen">
-          {/* Topbar */}
-          <div className="h-[10%] flex items-center justify-center">
-            <span className="text-xl font-medium">EvoWatch</span>
-          </div>
           <SidebarSection title="Explore">
             <SidebarButton title="Home" url="/" icon={<House size={20} />} />
             <SidebarButton
