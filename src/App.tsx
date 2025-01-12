@@ -22,7 +22,9 @@ function App() {
 
   return (
     <>
-      <Sidebar />
+      <div className="bg-[#070707] text-[#dbdbdb]">
+        <Sidebar />
+      </div>
     </>
   );
 }
