@@ -7,7 +7,7 @@ export default function MainPage() {
       {[...Array(15)].map((_, i) => (
         <div key={i} className="flex flex-col gap-8">
           <CategoryTitle title="Classics" />
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap">
             {[...Array(15)].map((_, j) => (
               <Card
                 key={j}

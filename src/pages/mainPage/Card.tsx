@@ -7,7 +7,7 @@ interface CardProps {
 export default function Card(props : CardProps) {
 
     return (
-        <div className="w-36 xl:w-48">
+        <div className="px-2 w-1/2 md:w-1/4 xl:w-1/6 2xl:w-[12.5%] min-[2020px]:w-[215px]">
             <a href={props.link}>
                 <img src={props.imgUrl} className="w-full rounded-3xl border-2 border-black" />
                 <p className="text-xl font-semibold text-center hover:underline">{props.title}</p>
