@@ -1,38 +1,20 @@
-import { useState } from 'react'
-import './App.css'
-import { ApiClient } from './app/apiClient.ts'
+import MainPage from "./pages/mainPage/MainPage";
 
 function App() {
-  const [userName, setUserName] = useState("");
-
-
-  console.log(userName);
-
-  const addUser = () => {
-    apiClient.userService.addUser({
-      normalName: userName,
-      email: "test",
-      nickname: userName,
-      password: "string",
-      imageUrl: "http://localhost:5092"
-    });
-  }
-
-  let apiClient = new ApiClient();
-
   return (
-    <>
-      <h1 className="text-3xl font-bold underline bg-red-300">evoWatch</h1>
-      <div className="card">
-
-        <input type='text' value={userName} onChange={(e) => {setUserName(e.target.value)} }></input>
-
-        <button onClick={addUser}>
-          Register
-        </button>
+    <div className="flex min-h-screen flex-col bg-[#070707] text-[#dbdbdb]">
+      <header className="sticky top-0 min-h-20 w-full border-b-2 border-[#1f1f1f] bg-[#070707] z-30">
+        Header placeholder
+      </header>
+      <div className="flex flex-grow">
+        <div className="min-w-64 border-r-2 border-[#1f1f1f]">
+          Sidebar placeholder
+        </div>
+        <main className="flex-grow">
+          <MainPage />
+        </main>
       </div>
-    </>
-  )
+    </div>
+  );
 }
-
-export default App
+export default App;
