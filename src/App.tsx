@@ -1,32 +1,21 @@
-import { useState } from "react";
-import "./App.css";
-import { ApiClient } from "./app/apiClient.ts";
+import MainPage from "./pages/mainPage/MainPage";
 import Sidebar from "./components/sidebar/Sidebar.tsx";
 
 function App() {
-  const [userName, setUserName] = useState("");
-
-  console.log(userName);
-
-  const addUser = () => {
-    apiClient.userService.addUser({
-      normalName: userName,
-      email: "test",
-      nickname: userName,
-      password: "string",
-      imageUrl: "http://localhost:5092",
-    });
-  };
-
-  let apiClient = new ApiClient();
-
   return (
-    <>
-      <div className="bg-[#070707] text-[#dbdbdb]">
-        <Sidebar />
+    <div className="flex min-h-screen flex-col bg-[#070707] text-[#dbdbdb]">
+      <header className="sticky top-0 min-h-20 w-full border-b-2 border-[#1f1f1f] bg-[#070707] z-30">
+        Header placeholder
+      </header>
+      <div className="flex flex-grow">
+        <div>
+          <Sidebar />
+        </div>
+        <main className="flex-grow">
+          <MainPage />
+        </main>
       </div>
-    </>
+    </div>
   );
 }
-
 export default App;
