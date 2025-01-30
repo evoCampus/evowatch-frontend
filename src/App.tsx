@@ -1,4 +1,5 @@
 import MainPage from "./pages/mainPage/MainPage";
+import Sidebar from "./components/sidebar/Sidebar.tsx";
 
 function App() {
   return (
@@ -7,8 +8,8 @@ function App() {
         Header placeholder
       </header>
       <div className="flex flex-grow">
-        <div className="min-w-64 border-r-2 border-[#1f1f1f]">
-          Sidebar placeholder
+        <div>
+          <Sidebar />
         </div>
         <main className="flex-grow">
           <MainPage />
